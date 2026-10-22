@@ -12,31 +12,42 @@
 .bookmark-link{color:#1956ba;font-weight:700;text-decoration:underline;text-underline-offset:3px;background:none;border:0;padding:3px;cursor:pointer}
 .bookmark-help{display:none;margin:8px auto 2px;color:#445a7a;max-width:650px;line-height:1.5}
 .bookmark-help.visible{display:block}
+</style><style>
+.brand .mark{border-radius:12px 4px 12px 4px;transform:rotate(-8deg);background:linear-gradient(135deg,#173f99,#08a6cc);box-shadow:0 8px 18px #0e85bd35;font-size:0}
+.brand .mark::after{content:"";width:23px;height:23px;border:3px solid white;border-radius:6px 2px 6px 2px;transform:rotate(8deg);background:linear-gradient(90deg,transparent 37%,#fff 37%,#fff 48%,transparent 48%);clip-path:polygon(0 0,100% 0,100% 100%,0 100%)}
+.welcome{background:radial-gradient(circle at 83% 25%,#d9edff 0,#edf5ff 35%,#f9fbff 78%);padding:82px 0 96px;overflow:hidden}
+.welcome-layout{display:grid;grid-template-columns:1.15fr .85fr;align-items:center;gap:38px}
+.welcome-copy h1{font-size:clamp(40px,5vw,66px);letter-spacing:-2.7px;line-height:1.11;margin:18px 0 22px;color:#12254b}
+.welcome-copy h1 span{color:#1873dc}
+.welcome-copy>p{font-size:18px;line-height:1.8;color:#60718a;max-width:560px}
+.welcome-actions{display:flex;gap:12px;flex-wrap:wrap;margin:32px 0 28px}
+.primary-link,.outline-link{display:inline-block;padding:15px 21px;border-radius:12px;text-decoration:none;font-weight:750}
+.primary-link{background:#206de1;color:white;box-shadow:0 7px 22px #236cdb34}
+.outline-link{border:1px solid #b7d0f5;color:#24558f;background:white}
+.primary-link:hover{background:#164eb4}.outline-link:hover{background:#eaf3ff}
+.trustline{font-size:13px;color:#627d9a;line-height:2}
+.welcome-art{position:relative;min-height:350px;display:grid;place-items:center}
+.orbit{position:absolute;border-radius:50%;border:2px dashed #b8d6fa}.orbit-one{width:310px;height:310px}.orbit-two{width:210px;height:210px;border-style:solid;border-color:#cee2fa}
+.hero-badge{width:183px;height:183px;border-radius:44px;background:linear-gradient(145deg,#0d3d91,#08afd4);display:grid;place-items:center;transform:rotate(-8deg);box-shadow:0 25px 45px #1465bb42}
+.floating-tool{position:absolute;background:white;border:1px solid #e2eefa;border-radius:18px;box-shadow:0 14px 28px #1e579b20;width:67px;height:67px;display:grid;place-items:center;font-size:29px}
+.tool-a{top:15px;left:12%}.tool-b{right:8%;top:55px}.tool-c{bottom:15px;right:22%}
+.homepage-bottom{padding-top:58px;padding-bottom:78px;text-align:center}.intro-block{max-width:700px;margin:auto}.intro-block h2{font-size:30px;letter-spacing:-.9px}.intro-block p{line-height:1.8;color:#60718a;font-size:16px}
+@media(max-width:760px){.welcome{padding:56px 0 54px}.welcome-layout{grid-template-columns:1fr}.welcome-art{min-height:275px}.orbit-one{width:250px;height:250px}.orbit-two{width:180px;height:180px}.hero-badge{width:150px;height:150px}.welcome-copy>p{font-size:16px}.welcome-copy h1{letter-spacing:-1.6px}}
 </style></head><body>
 <header><div class="wrap nav"><a class="brand" href="./"><span class="mark">✦</span> SimpleTools</a><span class="navsmall">Useful tools. No fuss. Always free.</span></div></header><nav class="tools-nav" aria-label="Main navigation"><a href="./" aria-current="page">Home</a><a href="calculator.html">🧮 Calculator</a><a href="password-generator.html">🔐 Password Generator</a><a href="word-counter.html">📝 Word Counter</a><a href="text-converter.html">🔠 Text Case Converter</a><a href="percentage-calculator.html">📊 Percentage Calculator</a><a href="countdown-timer.html">⏱️ Countdown Timer</a></nav><div class="bookmark-bar"><button type="button" class="bookmark-link" id="bookmark-link">⭐ Click here to bookmark this page so you can come back to it easier</button><p class="bookmark-help" id="bookmark-help" role="status" aria-live="polite"></p></div>
-<section class="hero"><div class="wrap"><div class="eyebrow">Your everyday toolkit</div><h1>Small tools. <span>Big convenience.</span></h1><p>Simple, free tools that work directly in your browser.</p><input class="search" id="search" placeholder="🔎  Search tools..." aria-label="Search tools"></div></section>
-<main class="wrap section"><h2>All tools</h2><div class="grid" id="grid">
-<article class="card" data-name="calculator maths arithmetic"><div class="ic">🧮</div><h3>Calculator</h3><p>Add, subtract, multiply or divide two numbers.</p><input class="field" id="ca" type="number" placeholder="First number"><select class="field" id="cop"><option value="+">Add (+)</option><option value="-">Subtract (−)</option><option value="*">Multiply (×)</option><option value="/">Divide (÷)</option></select><input class="field" id="cb" type="number" placeholder="Second number"><button class="btn" id="calc">Calculate</button><div class="result" id="cres" aria-live="polite">Your result will appear here.</div></article>
-<article class="card" data-name="password generator secure random"><div class="ic">🔐</div><h3>Password Generator</h3><p>Generate a random password securely on your device.</p><label class="small" for="plen">Password length (8–64)</label><input class="field" id="plen" type="number" min="8" max="64" value="16"><button class="btn" id="gen">Generate password</button><button class="btn secondary" id="copy" type="button">Copy</button><div class="result" id="pout" aria-live="polite">Click generate to begin.</div></article>
-<article class="card" data-name="word counter characters text"><div class="ic">📝</div><h3>Word Counter</h3><p>Instantly count words and characters as you type.</p><textarea class="field" id="words" rows="5" placeholder="Type or paste your text..."></textarea><div class="result" id="wout">0 words · 0 characters</div></article>
-<article class="card" data-name="text case converter uppercase lowercase title"><div class="ic">🔠</div><h3>Text Case Converter</h3><p>Change text to uppercase, lowercase or title case.</p><textarea class="field" id="casein" rows="4" placeholder="Paste text here..."></textarea><div class="inline"><button class="btn" id="upper">UPPER</button><button class="btn" id="lower">lower</button><button class="btn" id="title">Title</button></div><div class="result" id="caseout" aria-live="polite">Converted text appears here.</div></article>
-<article class="card" data-name="percentage calculator percent discount"><div class="ic">📊</div><h3>Percentage Calculator</h3><p>Find a percentage of any number.</p><input class="field" id="pct" type="number" placeholder="Percentage, e.g. 15"><input class="field" id="base" type="number" placeholder="Number, e.g. 200"><button class="btn" id="percent">Calculate</button><div class="result" id="pctout" aria-live="polite">Your result will appear here.</div></article>
-<article class="card" data-name="timer countdown minutes seconds"><div class="ic">⏱️</div><h3>Countdown Timer</h3><p>Set a timer for studying, cooking or quick tasks.</p><input class="field" id="mins" type="number" min="1" max="1440" value="5" aria-label="Minutes"><div class="inline"><button class="btn" id="start">Start</button><button class="btn secondary" id="stop">Reset</button></div><div class="result" id="timer" aria-live="polite">05:00</div></article>
-</div><p id="empty" class="empty">No matching tools found.</p></main>
+<section class="welcome"><div class="wrap welcome-layout">
+<div class="welcome-copy"><div class="eyebrow">WELCOME TO SIMPLETOOLS</div>
+<h1>Everyday tasks.<br><span>Made simple.</span></h1>
+<p>Handy, free tools for the little things you do every day. No sign-ups, no complicated menus — just open a tool and get things done.</p>
+<div class="welcome-actions"><a href="calculator.html" class="primary-link">Start with Calculator →</a><a href="password-generator.html" class="outline-link">Generate a Password</a></div>
+<div class="trustline">✓ Free to use &nbsp; ✓ Mobile friendly &nbsp; ✓ Works in your browser</div></div>
+<div class="welcome-art" aria-hidden="true"><div class="orbit orbit-one"></div><div class="orbit orbit-two"></div>
+<div class="hero-badge"><svg viewBox="0 0 120 120" width="92" height="92" aria-hidden="true"><rect x="21" y="19" width="78" height="82" rx="21" fill="#fff" opacity=".14"/><path d="M40 42h40M40 58h40M40 74h23" stroke="#fff" stroke-width="8" stroke-linecap="round"/><path d="M81 69l5 9 10 1-7 7 2 10-10-5-9 5 2-10-7-7 10-1z" fill="#facc15"/></svg></div>
+<div class="floating-tool tool-a">🧮</div><div class="floating-tool tool-b">🔐</div><div class="floating-tool tool-c">⏱️</div></div>
+</div></section>
+<section class="homepage-bottom wrap"><div class="intro-block"><span class="eyebrow">BUILT FOR CONVENIENCE</span><h2>Everything you need, a click away.</h2><p>Choose any tool from the navigation menu above. Each tool has its own page, so you can bookmark your favourites and come straight back.</p></div></section>
 <footer>© <span id="year"></span> SimpleTools · Free browser tools · No account required</footer>
 <script>
-const el=id=>document.getElementById(id);
-el('year').textContent=new Date().getFullYear();
-el('search').addEventListener('input',e=>{let n=0;document.querySelectorAll('.card').forEach(c=>{let show=c.dataset.name.includes(e.target.value.toLowerCase().trim())||c.querySelector('h3').textContent.toLowerCase().includes(e.target.value.toLowerCase().trim());c.classList.toggle('hidden',!show);if(show)n++});el('empty').style.display=n?'none':'block'});
-el('calc').onclick=()=>{const a=Number(el('ca').value),b=Number(el('cb').value),op=el('cop').value;if(el('ca').value===''||el('cb').value===''){el('cres').textContent='Enter both numbers.';return}if(op==='/'&&b===0){el('cres').textContent='Cannot divide by zero.';return}let r=op==='+'?a+b:op==='-'?a-b:op==='*'?a*b:a/b;el('cres').textContent=String(Number(r.toPrecision(12)))};
-el('gen').onclick=()=>{const n=Math.min(64,Math.max(8,Number(el('plen').value)||16));el('plen').value=n;const chars='ABCDEFGHJKLMNPQRSTUVWXYZabcdefghijkmnopqrstuvwxyz23456789!@#$%&*?';const vals=new Uint32Array(n);crypto.getRandomValues(vals);const threshold=Math.floor(4294967296/chars.length)*chars.length;let pass='';for(let i=0;i<n;i++){let v=vals[i];while(v>=threshold){let temp=new Uint32Array(1);crypto.getRandomValues(temp);v=temp[0]}pass+=chars[v%chars.length]}el('pout').textContent=pass};
-el('copy').onclick=async()=>{const t=el('pout').textContent;if(t==='Click generate to begin.')return;try{await navigator.clipboard.writeText(t);el('copy').textContent='Copied!';setTimeout(()=>el('copy').textContent='Copy',1500)}catch{el('copy').textContent='Select to copy'}};
-el('words').oninput=()=>{const t=el('words').value;el('wout').textContent=(t.trim()?t.trim().split(/\s+/u).length:0)+' words · '+Array.from(t).length+' characters'};
-function convert(mode){const t=el('casein').value;el('caseout').textContent=mode==='upper'?t.toUpperCase():mode==='lower'?t.toLowerCase():t.toLowerCase().replace(/\b\w/g,c=>c.toUpperCase())}
-el('upper').onclick=()=>convert('upper');el('lower').onclick=()=>convert('lower');el('title').onclick=()=>convert('title');
-el('percent').onclick=()=>{if(el('pct').value===''||el('base').value===''){el('pctout').textContent='Enter both values.';return}el('pctout').textContent=String(Number((Number(el('pct').value)*Number(el('base').value)/100).toPrecision(12)))};
-let countdown=null,remaining=300;function render(){el('timer').textContent=String(Math.floor(remaining/60)).padStart(2,'0')+':'+String(remaining%60).padStart(2,'0')}el('start').onclick=()=>{if(countdown)return;remaining=Math.max(1,Math.min(1440,Number(el('mins').value)||5))*60;render();let target=Date.now()+remaining*1000;countdown=setInterval(()=>{remaining=Math.max(0,Math.ceil((target-Date.now())/1000));render();if(!remaining){clearInterval(countdown);countdown=null;el('timer').textContent='Time is up!'}},250)};el('stop').onclick=()=>{clearInterval(countdown);countdown=null;remaining=Math.max(1,Math.min(1440,Number(el('mins').value)||5))*60;render()};
-</script><script>
 (function(){
  const link=document.getElementById('bookmark-link');
  const help=document.getElementById('bookmark-help');
