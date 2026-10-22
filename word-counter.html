@@ -12,6 +12,21 @@
 .bookmark-link{color:#1956ba;font-weight:700;text-decoration:underline;text-underline-offset:3px;background:none;border:0;padding:3px;cursor:pointer}
 .bookmark-help{display:none;margin:8px auto 2px;color:#445a7a;max-width:650px;line-height:1.5}
 .bookmark-help.visible{display:block}
+
+/* Footer layout shared across SimpleTools pages; based on Zero Dollar Store. */
+.site-footer{background:#fff;border-top:1px solid #e4eaf5;padding:31px 0 35px;text-align:left;color:#17253e}
+.site-footer-row{display:flex;justify-content:space-between;align-items:flex-start;gap:30px}
+.site-footer-about{flex:0 1 370px}
+.site-footer .brand{font-size:20px;display:inline-flex}
+.site-footer .mark{width:34px;height:34px;border-radius:10px;font-size:20px}
+.site-footer-about p{font-size:13px;line-height:1.6;color:#708099;margin:12px 0 0}
+.site-footer-nav{display:flex;justify-content:flex-end;gap:14px 20px;flex-wrap:wrap;max-width:600px;padding-top:9px}
+.site-footer-nav a{color:#63758e;font-size:12px;font-weight:650;text-decoration:none}
+.site-footer-nav a:hover,.site-footer-nav a:focus-visible{text-decoration:underline;color:#2153a7}
+.site-footer-operator{margin-top:22px;padding-top:16px;border-top:1px solid #e4eaf5;text-align:center;font-size:12px;color:#687991;line-height:1.6}
+.site-footer-operator a{color:#1956ba;font-weight:800;text-decoration:underline;text-underline-offset:2px}
+.site-footer-operator a:hover,.site-footer-operator a:focus-visible{color:#103a81}
+@media(max-width:760px){.site-footer-row{flex-direction:column;gap:20px}.site-footer-about{flex:auto}.site-footer-nav{justify-content:flex-start;padding-top:0}.site-footer{padding:27px 0 30px}}
 </style></head><body>
 <header><div class="wrap nav"><a class="brand" href="./"><span class="mark">✦</span> SimpleTools</a><span class="navsmall">Useful tools. No fuss. Always free.</span></div></header><nav class="tools-nav" aria-label="Main navigation"><a href="./">Home</a><a href="calculator.html">🧮 Calculator</a><a href="password-generator.html">🔐 Password Generator</a><a href="word-counter.html" aria-current="page">📝 Word Counter</a><a href="text-converter.html">🔠 Text Case Converter</a><a href="percentage-calculator.html">📊 Percentage Calculator</a><a href="countdown-timer.html">⏱️ Countdown Timer</a></nav><div class="bookmark-bar"><button type="button" class="bookmark-link" id="bookmark-link">⭐ Click here to bookmark this page so you can come back to it easier</button><p class="bookmark-help" id="bookmark-help" role="status" aria-live="polite"></p></div>
 <section class="hero"><div class="wrap"><div class="eyebrow">Your everyday toolkit</div><h1>📝 <span>Word Counter</span></h1><p>A free, easy-to-use tool that runs right in your browser.</p><input class="search" id="search" placeholder="🔎  Search tools..." aria-label="Search tools"></div></section>
@@ -23,7 +38,24 @@
 <article class="card" data-name="percentage calculator percent discount"><div class="ic">📊</div><h3>Percentage Calculator</h3><p>Find a percentage of any number.</p><input class="field" id="pct" type="number" placeholder="Percentage, e.g. 15"><input class="field" id="base" type="number" placeholder="Number, e.g. 200"><button class="btn" id="percent">Calculate</button><div class="result" id="pctout" aria-live="polite">Your result will appear here.</div></article>
 <article class="card" data-name="timer countdown minutes seconds"><div class="ic">⏱️</div><h3>Countdown Timer</h3><p>Set a timer for studying, cooking or quick tasks.</p><input class="field" id="mins" type="number" min="1" max="1440" value="5" aria-label="Minutes"><div class="inline"><button class="btn" id="start">Start</button><button class="btn secondary" id="stop">Reset</button></div><div class="result" id="timer" aria-live="polite">05:00</div></article>
 </div><p id="empty" class="empty">No matching tools found.</p></main>
-<footer>© <span id="year"></span> SimpleTools · Free browser tools · No account required</footer>
+<footer class="site-footer">
+  <div class="wrap site-footer-row">
+    <div class="site-footer-about">
+      <a class="brand" href="./" aria-label="SimpleTools home"><span class="mark">✦</span> SimpleTools</a>
+      <p>Useful tools for everyday tasks, right in your browser.</p>
+    </div>
+    <nav class="site-footer-nav" aria-label="Footer navigation">
+      <a href="./">Home</a>
+      <a href="calculator.html">Calculator</a>
+      <a href="password-generator.html">Password Generator</a>
+      <a href="word-counter.html">Word Counter</a>
+      <a href="text-converter.html">Text Case Converter</a>
+      <a href="percentage-calculator.html">Percentage Calculator</a>
+      <a href="countdown-timer.html">Countdown Timer</a>
+    </nav>
+  </div>
+  <div class="wrap site-footer-operator">Operated by <a href="https://GroundSupportCrew.com" target="_blank" rel="noopener noreferrer">GroundSupportCrew.com</a>.</div>
+</footer>
 <script>
 const el=id=>document.getElementById(id);
 el('year').textContent=new Date().getFullYear();
