@@ -1,0 +1,42 @@
+name: Package My Dictation public source ZIP
+on:
+  workflow_dispatch:
+  push:
+    paths:
+      - 'downloads/my-dictation/source/**'
+      - 'downloads/my-dictation/VERSION_INFO.md'
+      - '.github/workflows/package-my-dictation.yml'
+permissions:
+  contents: write
+jobs:
+  zip:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build v1.4 source archive including version info
+        run: |
+          python3 - <<'PY'
+          from pathlib import Path
+          from zipfile import ZipFile, ZIP_DEFLATED
+          root = Path("downloads/my-dictation/source")
+          out = Path("downloads/my-dictation/MyDictation-v1.4-source.zip")
+          with ZipFile(out,"w",compression=ZIP_DEFLATED) as z:
+              for f in sorted(root.rglob("*")):
+                  if f.is_file():
+                      z.write(f, arcname=str(f.relative_to(root)))
+          with ZipFile(out) as z:
+              names = set(z.namelist())
+              assert "my-dictation/VERSION_INFO.md" in names
+              assert "my-dictation/LICENSE" in names
+              assert "my-dictation/app/src/main/java/com/myapps/mydictation/NoteActivity.java" in names
+          print("Created",out, "bytes",out.stat().st_size)
+          PY
+      - name: Commit downloadable public ZIP
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add downloads/my-dictation/MyDictation-v1.4-source.zip
+          if ! git diff --cached --quiet; then
+            git commit -m "Package My Dictation v1.4 source with VERSION_INFO"
+            git push
+          fi
