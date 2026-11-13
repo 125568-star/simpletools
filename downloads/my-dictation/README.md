@@ -1,5 +1,7 @@
-# My Dictation — open-source Android app
+# My Dictation downloads
 
-**v1.4 (source release).** [Download source ZIP](MyDictation-v1.4-source.zip) | [Version history](VERSION_INFO.md) | [Browse source](source/my-dictation/) | [License](LICENSE)
+- [Android APK v1.5.3](MyDictation-v1.5.3.apk), the exact arm64 build installed on the Galaxy S23. Requires Android 13 or later. This APK uses the Offline package ID and was signed as a debug build.
+- [Complete source ZIP v1.5.3](MyDictation-v1.5.3-source.zip), including the native Whisper and voice detection sources, build instructions, and GPLv3 licence.
+- [Version history](VERSION_INFO.md)
 
-This is original Android source code, not a release-signed APK. The customised v1.4 application uses Android speech recognition (Whisper is not yet integrated). The requested three-second silence stop is not in v1.4. No personal notes, recordings or credentials are included.
+The [v1.4 source ZIP](MyDictation-v1.4-source.zip) remains available under its original MIT licence.
