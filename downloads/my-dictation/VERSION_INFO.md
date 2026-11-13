@@ -13,6 +13,7 @@ This file records the Android app's development history. Versions are listed in 
 | 1.5.1 | Black text on light blue buttons and light note cards. Keeps the editor black and removes unused Android speech recognition code and extra native binaries. |
 | 1.5.2 | Stop cancels Whisper transcription. Record can replace a pending take or redo the most recent transcript in the open editor. |
 | 1.5.3 | Adds a Delete note button in the editor with confirmation. |
+| 1.5.4 | Record appends each new transcript to the end of the note, preserving all saved text. |
 
 ## Source and distribution
 
