@@ -14,6 +14,7 @@ This file records the Android app's development history. Versions are listed in 
 | 1.5.2 | Stop cancels Whisper transcription. Record can replace a pending take or redo the most recent transcript in the open editor. |
 | 1.5.3 | Adds a Delete note button in the editor with confirmation. |
 | 1.5.4 | Record appends each new transcript to the end of the note, preserving all saved text. |
+| 1.5.5 | Dictate directly into the title, append body recordings as separate paragraphs, show a full-screen hourglass during transcription, and save and close the note with the floppy disk button. |
 
 ## Source and distribution
 
